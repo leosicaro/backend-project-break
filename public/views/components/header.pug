@@ -1,0 +1,40 @@
+header  
+    nav.navBar
+        ul
+
+            li
+                button(type='button', onclick='filterByCategory("Pantalones")') Pantalones
+            li
+                button(type='button', onclick='filterByCategory("Camisetas")') Camisetas
+            li
+                button(type='button', onclick='filterByCategory("Zapatos")') Zapatos 
+            li
+                button(type='button', onclick='filterByCategory("Accesorios")') Accesorios
+    div
+        ul
+            li 
+                a(href="/products") home    
+            li  
+                a(href="/dashboard") dashboard 
+    
+
+script.
+    const products = !{JSON.stringify(products)};
+    function filterByCategory(category) {
+        const filteredProducts = products.filter(product => product.category === category);
+        displayProducts(filteredProducts);
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.navBar button').forEach(button => {
+            button.addEventListener('click', event => {
+                const categoryName = event.target.textContent.trim();
+                filterByCategory(categoryName);
+            });
+        });
+    });
+
+    
+
+

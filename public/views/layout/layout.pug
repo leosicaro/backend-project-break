@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=mytitle
+        link(rel="stylesheet", href="/styles.css")
+    body 
+        - var myClasses = ["card", "button", "form","category","navBar"]
+        - var products = products
+        
+        include ../components/header.pug
+
+        block content
+
+        include ../components/footer.pug
+
+
+
+
+
+script(src="script.js") 

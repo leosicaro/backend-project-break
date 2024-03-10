@@ -1,0 +1,27 @@
+extends ../layout/layout.pug
+
+block content
+
+    script.
+        function displayProducts(productsToShow) {
+        console.log('Mostrar productos:1', productsToShow);
+        const productContainer = document.getElementById('productContainer');
+        productContainer.innerHTML = productsToShow.map(product => `
+            <li class="card">
+                <a href="/products/${product._id}"
+                    <h3>${product.title}</h3>
+                    <p>Price: ${product.price}</p>
+                </a>
+            </li>
+        `).join('');
+        }
+
+
+    article
+        ul#productContainer.container
+            each product in products
+                li.card
+                    a(href='/products/'+product._id)
+                        //- img(src=product.image, alt=product.title)
+                        h3 #{product.title}
+                        p Price: #{product.price}

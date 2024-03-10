@@ -1,0 +1,35 @@
+extends ../layout/layout.pug
+
+block content
+
+	article 
+		form(action="/dashboard", method="POST")
+	
+				label(for="title") Nombre:
+				input(type="text", name="title",required)
+	
+				label(for="description") Descripción:
+				textarea(name="description" required)
+	
+				//- label(for="image") Imagen URL:
+				//- input(type="text", name="image")
+	
+				label(for="category") Categoría:
+				select(name="category" required)
+					option(value="Pantalones") Pantalones
+					option(value="Camisetas") Camisetas
+					option(value="Zapatos") Zapatos
+					option(value="Accesorios") Accesorios		
+	
+				label(for="size") Talla:
+				select(name="size" required)
+					option(value="XS") XS
+					option(value="S") S
+					option(value="M") M
+					option(value="L") L
+					option(value="XL") XL
+	
+				label(for="price") Precio:
+				input(type="number", name="price" required)
+	
+				button(type="submit") Subir producto

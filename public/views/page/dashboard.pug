@@ -1,0 +1,36 @@
+extends ../layout/layout.pug 
+
+block content
+    script.
+        function displayProducts(productsToShow) {
+            console.log('Mostrar productos:', productsToShow);
+            const productContainer = document.getElementById('productContainer');
+            productContainer.innerHTML = productsToShow.map(product => `
+                <li class="card">
+                    <a href="/dashboard/${product._id}">
+                        <h3>${product.title}</h3>
+                        <p>Price: ${product.price}</p>
+                    </a>
+                    <form action="/dashboard/${product._id}/delete?_method=DELETE" method="POST" style="display:inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Eliminar producto</button>
+                    </form>
+                    <button type="button" onclick='editProduct("${product._id}")'>Editar</button>
+                </li>
+            `).join('');
+        }
+    
+    article
+        ul#productContainer.container
+            each product in products
+                li.card
+                    a(href='/dashboard/'+product._id)
+                        h3 #{product.title}
+                        p Price: #{product.price}
+                    form(action=`/dashboard/${product._id}/delete`, method='POST')
+                        input(type='hidden', name='_method', value='DELETE')
+                        button(type='submit', class='eraseButton') Eliminar producto
+                    button(type='button', onclick='editProduct("#{product._id}")') Editar
+
+    aside 
+        a.creationButton(href='/dashboard/new') Crear Producto

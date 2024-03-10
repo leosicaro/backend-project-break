@@ -1,0 +1,189 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --verde: #bfc0bf;
+  --claro: #99a0a5;
+  --amarillo: #686964;
+  --naranja: #88807b;
+  --burdeos: #5a5b64;
+
+
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+
+  background-color: var(--burdeos);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav {
+
+  width: 100%;
+  height: 100%;
+}
+
+nav ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items:center;
+}
+
+nav ul li {
+
+  border: 1px solid var(--verde);
+  font-size: 30px;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+
+}
+
+li {
+  list-style: none;
+  width: min-content;
+  height: min-content;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+
+}
+
+.category {
+  text-decoration: none;
+  color: #D2FF28;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+
+}
+
+div {
+  width: 10%;
+  height: 100%;
+  background-color: var(--naranja);
+
+}
+div ul{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+div ul li{
+  border: 1px solid var(--burdeos);
+  padding: 5px;
+}
+
+/* =================================================================================== */
+body {
+  background-color: var(--claro);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container{
+  padding: 50px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space- space-evenly;
+  align-items:center;
+
+}
+
+.card {
+  background-color: var(--verde);
+  color: var(--burdeos);
+  padding:10px;
+  margin: 20px;
+  border: 1px solid red;
+}
+
+img{
+
+  width: 50px;
+}
+
+.footer{
+margin: auto;
+width: 90%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
